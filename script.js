@@ -16,6 +16,11 @@ calculateBtn.addEventListener('click', function(){
   const birthdate = new Date(birthdateValue);
   const today = new Date();
 
+  if(birthdate > today){
+    result.textContent = 'That date is in the future!';
+    return;
+  }
+
   // Step 6: Calculate the differences
   let years = today.getFullYear() - birthdate.getFullYear();
   let months= today.getMonth() - birthdate.getMonth();
@@ -34,5 +39,5 @@ calculateBtn.addEventListener('click', function(){
   }
 
   // Stepp 9: Display the result
-  result.textContent = `You are ${years}years, ${months}months, and ${days}days old!`;
+  result.textContent = `You are ${years} years, ${months} months, and ${days} days old!`;
 });
